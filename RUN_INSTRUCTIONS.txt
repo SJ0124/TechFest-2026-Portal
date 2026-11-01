@@ -1,0 +1,66 @@
+TECHFEST 2026 - EXPERIMENT 4 RUN INSTRUCTIONS
+
+FOLDER STRUCTURE
+D:\Web Technology\
+    techfest2026-react\
+        src\...
+        techfest-backend\
+            models\
+            routes\
+            middleware\
+            .env
+            package.json
+            server.js
+
+BACKEND
+1. Install MongoDB Community Server and MongoDB Compass.
+2. Start MongoDB. The local server must be available at:
+   mongodb://127.0.0.1:27017
+3. Open a CMD terminal in:
+   D:\Web Technology\techfest2026-react\techfest-backend
+4. Run:
+   npm install
+5. Start:
+   node server.js
+6. Expected terminal messages include:
+   MongoDB connected
+   Server started on http://localhost:5000
+
+FRONTEND
+1. Open another CMD terminal in:
+   D:\Web Technology\techfest2026-react
+2. Run:
+   npm install
+   npm install react-router-dom axios
+3. Start:
+   npm run dev
+4. Open:
+   http://localhost:5173
+
+TEST ORDER
+1. Sign Up a user at /signup.
+2. Open MongoDB Compass and check the techfest database -> users collection.
+   The password must be a bcrypt hash, not plain text.
+3. Log in at /login. The JWT is stored in localStorage.
+4. Create an event with Postman/Thunder Client:
+   POST http://localhost:5000/api/events
+   Header: Authorization: Bearer <token>
+   Body JSON:
+   {
+     "name": "AI Workshop",
+     "category": "Workshop",
+     "fee": 250,
+     "seats": 30,
+     "date": "2026-12-15"
+   }
+5. GET http://localhost:5000/api/events
+6. Open React /events and verify the event appears.
+7. Register for an event while logged in.
+8. Check Compass: events.seats decreases and registrations contains the user/event.
+9. Open /register and click View My Registrations.
+10. Test a protected POST without Authorization. It should return HTTP 401.
+11. Test an unknown URL such as http://localhost:5000/api/does-not-exist. It should return HTTP 404.
+
+IMPORTANT
+- Keep the backend and React frontend running in separate terminals.
+- Do not commit/share .env or node_modules.
