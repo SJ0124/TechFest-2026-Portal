@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import EventList from "../components/EventList";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://techfest-2026-portal.onrender.com/api";
 
 function Events() {
   const [events, setEvents] = useState([]);

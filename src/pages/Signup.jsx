@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "http://localhost:5000/api";
-
+const API_URL = "https://techfest-2026-portal.onrender.com/api";
 function Signup() {
   const [form, setForm] = useState({ name: "", email: "", password: "" });
   const [message, setMessage] = useState("");

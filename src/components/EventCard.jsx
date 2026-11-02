@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const API_URL = "http://localhost:5000/api";
+const API_URL = "https://techfest-2026-portal.onrender.com/api";
 
 function EventCard({ event, onRegistered }) {
   const [seatsLeft, setSeatsLeft] = useState(event.seats);
