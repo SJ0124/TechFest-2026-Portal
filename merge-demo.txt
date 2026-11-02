@@ -1,1 +1,2 @@
 This file was created in the main branch.
+This file was created in the conflict-demo branch.
